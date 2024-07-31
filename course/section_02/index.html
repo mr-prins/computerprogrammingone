@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ricardo Prins" /><link rel="canonical" href="https://rockwellhigh.github.io/computerprogrammingone/course/section_02/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Basic Types in Python - RCHS - Computer Programming I - Mr. Prins</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Basic Types in Python";
+        var mkdocs_page_input_path = "course\\section_02.md";
+        var mkdocs_page_url = "/computerprogrammingone/course/section_02/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RCHS - Computer Programming I - Mr. Prins
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Course Structure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../section_01/">Git and GitHub</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Basic Types in Python</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-do-we-use-programming">Why Do We Use Programming?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-need-for-types">The Need for Types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types-in-python">Types in Python</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#integers-int">Integers (int)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#floating-point-numbers-float">Floating-Point Numbers (float)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#strings-str">Strings (str)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#booleans-bool">Booleans (bool)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lists-list">Lists (list)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tuples-tuple">Tuples (tuple)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dictionaries-dict">Dictionaries (dict)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-concept-of-values">The Concept of Values</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_03/">Code Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_04/">Expressions and Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_05/">Assignments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_06/">Operators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_07/">Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_08/">Conditionals</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_09/">Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_10/">Loops</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_11/">Boolean Expressions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_12/">Recursion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_13/">Sequences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_14/">String Manipulation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../section_15/">Exceptions</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../links/">Useful Links</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RCHS - Computer Programming I - Mr. Prins</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Course Structure</li>
+      <li class="breadcrumb-item active">Basic Types in Python</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="basic-types-in-python">Basic Types in Python</h1>
+<h2 id="why-do-we-use-programming">Why Do We Use Programming?</h2>
+<p>Programming allows us to perform operations on data to solve problems, automate tasks, and create applications. Imagine you have a list of students' grades and you want to find the average. Doing this manually is time-consuming and prone to errors. With programming, you can write a few lines of code to calculate the average quickly and accurately.</p>
+<h2 id="the-need-for-types">The Need for Types</h2>
+<p>When programming, it's important to understand the kind of data we're working with. Different types of data require different operations. For example, you can add two numbers together, but adding a number and a word doesn't make sense. This is where types come in. Types help the computer understand what kind of data it is dealing with so it can perform the correct operations.</p>
+<h2 id="types-in-python">Types in Python</h2>
+<p>Python, like many programming languages, has several built-in types to handle different kinds of data. Let's explore the most common types:</p>
+<h3 id="integers-int">Integers (<code>int</code>)</h3>
+<p>Integers are whole numbers, both positive and negative. They do not have any decimal points.</p>
+<pre><code class="language-python">5
+-42
+1000
+</code></pre>
+<h3 id="floating-point-numbers-float">Floating-Point Numbers (<code>float</code>)</h3>
+<p>Floating-point numbers are numbers with decimal points. They can represent very large or very small numbers.</p>
+<pre><code class="language-python">3.14
+-0.001
+100.0
+</code></pre>
+<h3 id="strings-str">Strings (<code>str</code>)</h3>
+<p>Strings are sequences of characters, like words or sentences. They are enclosed in either single quotes (<code>'</code>) or double quotes (<code>"</code>).</p>
+<pre><code class="language-python">&quot;Hello, world!&quot;
+'Python is fun!'
+&quot;12345&quot;  # This is a string, not an integer
+</code></pre>
+<h3 id="booleans-bool">Booleans (<code>bool</code>)</h3>
+<p>Booleans represent one of two values: <code>True</code> or <code>False</code>. They are used to perform logical operations and control the flow of a program.</p>
+<pre><code class="language-python">True
+False
+</code></pre>
+<h3 id="lists-list">Lists (<code>list</code>)</h3>
+<p>Lists are ordered collections of items. You can store different types of data in a list, and lists can be changed after they are created.</p>
+<pre><code class="language-python">[1, 2, 3, 4, 5]
+[&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+[True, False, True]
+</code></pre>
+<h3 id="tuples-tuple">Tuples (<code>tuple</code>)</h3>
+<p>Tuples are similar to lists, but they are immutable, meaning they cannot be changed after they are created. They are useful for storing related pieces of data that should not be altered.</p>
+<pre><code class="language-python">(1, 2, 3)
+(&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;)
+(True, False, False)
+</code></pre>
+<h3 id="dictionaries-dict">Dictionaries (<code>dict</code>)</h3>
+<p>Dictionaries are collections of key-value pairs. Each key in a dictionary is unique and is used to store and retrieve values.</p>
+<pre><code class="language-python">{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;city&quot;: &quot;New York&quot;}
+{&quot;brand&quot;: &quot;Ford&quot;, &quot;model&quot;: &quot;Mustang&quot;, &quot;year&quot;: 1964}
+</code></pre>
+<h2 id="the-concept-of-values">The Concept of Values</h2>
+<p>In programming, a value is the actual data stored in a variable or constant. The type of a value determines what operations can be performed on it. For example, you can add, subtract, multiply, and divide integer and floating-point values, but you can't perform these operations on strings.</p>
+<ul>
+<li>Integer value: <code>42</code></li>
+<li>Floating-point value: <code>3.14159</code></li>
+<li>String value: <code>"Hello"</code></li>
+<li>Boolean value: <code>True</code></li>
+</ul>
+<p>Understanding types and values is fundamental to programming because it helps you write correct and efficient code. As you practice more, you'll become familiar with how to use different types to solve problems and create applications.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../section_01/" class="btn btn-neutral float-left" title="Git and GitHub"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../section_03/" class="btn btn-neutral float-right" title="Code Structure">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../section_01/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../section_03/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
