@@ -69,6 +69,18 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_11/">Boolean Expressions</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Recursion</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#basic-structure-of-a-recursive-function">Basic Structure of a Recursive Function:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#practical-applications-of-recursion">Practical Applications of Recursion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advantages-of-recursion">Advantages of Recursion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#disadvantages-of-recursion">Disadvantages of Recursion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tips-for-using-recursion">Tips for Using Recursion</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_13/">Sequences</a>
                   </li>
@@ -105,7 +117,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="recursion">Recursion</h1>
+<p>Recursion is a powerful programming technique where a function calls itself in order to solve smaller instances of the same problem. It is particularly useful for problems that can be broken down into simpler, repetitive tasks.</p>
+<p>Recursion occurs when a function calls itself. A recursive function must have a base case that stops the recursion and one or more recursive cases that break the problem into smaller instances and call the function itself.</p>
+<h2 id="basic-structure-of-a-recursive-function">Basic Structure of a Recursive Function:</h2>
+<pre><code class="language-python">def recursive_function(parameters):
+    if base_case_condition:
+        return base_case_value
+    else:
+        # Recursive case
+        return recursive_function(modified_parameters)
+</code></pre>
+<p><strong>Example: Factorial Function</strong></p>
+<p>The factorial of a non-negative integer <code>n</code> is the product of all positive integers less than or equal to <code>n</code>. It can be defined recursively as:</p>
+<ul>
+<li><code>factorial(0) = 1</code> (base case)</li>
+<li><code>factorial(n) = n * factorial(n-1)</code> (recursive case)</li>
+</ul>
+<pre><code class="language-python">def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+</code></pre>
+<h2 id="practical-applications-of-recursion">Practical Applications of Recursion</h2>
+<p><strong>Calculating Fibonacci Numbers:</strong></p>
+<p>The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. It can be defined recursively as:</p>
+<ul>
+<li><code>fibonacci(0) = 0</code> (base case)</li>
+<li><code>fibonacci(1) = 1</code> (base case)</li>
+<li><code>fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)</code> (recursive case)</li>
+</ul>
+<pre><code class="language-python">def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(7))  # Output: 13
+</code></pre>
+<p><strong>Sum of a List:</strong></p>
+<p>You can use recursion to find the sum of a list of numbers.</p>
+<pre><code class="language-python">def sum_list(numbers):
+    if len(numbers) == 0:
+        return 0
+    else:
+        return numbers[0] + sum_list(numbers[1:])
+
+print(sum_list([1, 2, 3, 4, 5]))  # Output: 15
+</code></pre>
+<p><strong>Binary Search:</strong></p>
+<p>Binary search is an efficient algorithm for finding an item in a sorted list. It works by repeatedly dividing the list in half and comparing the target value to the middle element.</p>
+<pre><code class="language-python">def binary_search(arr, target, low, high):
+    if low &gt; high:
+        return -1  # Base case: target not found
+    mid = (low + high) // 2
+    if arr[mid] == target:
+        return mid  # Base case: target found
+    elif arr[mid] &gt; target:
+        return binary_search(arr, target, low, mid - 1)  # Search left half
+    else:
+        return binary_search(arr, target, mid + 1, high)  # Search right half
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target = 6
+print(binary_search(numbers, target, 0, len(numbers) - 1))  # Output: 5
+</code></pre>
+<p><strong>Towers of Hanoi:</strong></p>
+<p>The Towers of Hanoi is a classic problem where you have three pegs and a number of disks of different sizes. The goal is to move all the disks from one peg to another, following these rules:</p>
+<ul>
+<li>Only one disk can be moved at a time.</li>
+<li>A disk can only be placed on top of a larger disk.</li>
+</ul>
+<pre><code class="language-python">def towers_of_hanoi(n, source, target, auxiliary):
+    if n == 1:
+        print(f&quot;Move disk 1 from {source} to {target}&quot;)
+    else:
+        towers_of_hanoi(n - 1, source, auxiliary, target)
+        print(f&quot;Move disk {n} from {source} to {target}&quot;)
+        towers_of_hanoi(n - 1, auxiliary, target, source)
+
+towers_of_hanoi(3, 'A', 'C', 'B')
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Move disk 1 from A to C
+Move disk 2 from A to B
+Move disk 1 from C to B
+Move disk 3 from A to C
+Move disk 1 from B to A
+Move disk 2 from B to C
+Move disk 1 from A to C
+</code></pre>
+<h2 id="advantages-of-recursion">Advantages of Recursion</h2>
+<ul>
+<li><strong>Simplicity:</strong> Recursive solutions are often more straightforward and easier to understand than their iterative counterparts.</li>
+<li><strong>Elegance:</strong> Recursive functions can solve complex problems with minimal code.</li>
+</ul>
+<h2 id="disadvantages-of-recursion">Disadvantages of Recursion</h2>
+<ul>
+<li><strong>Performance:</strong> Recursive functions can be less efficient and use more memory than iterative solutions due to the overhead of multiple function calls.</li>
+<li><strong>Stack Overflow:</strong> Deep recursion can lead to stack overflow errors if the recursion depth exceeds the maximum stack size.</li>
+</ul>
+<h2 id="tips-for-using-recursion">Tips for Using Recursion</h2>
+<ol>
+<li><strong>Identify the Base Case:</strong> Ensure your recursive function has a well-defined base case to prevent infinite recursion.</li>
+<li><strong>Simplify the Problem:</strong> Break the problem into smaller subproblems that are easier to solve.</li>
+<li><strong>Avoid Redundant Calculations:</strong> Use memoization or caching to store results of expensive recursive calls to improve performance.</li>
+</ol>
               
             </div>
           </div><footer>

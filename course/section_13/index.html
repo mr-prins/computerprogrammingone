@@ -71,6 +71,42 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_12/">Recursion</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Sequences</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#lists">Lists</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tuples">Tuples</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#strings">Strings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ranges">Ranges</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-sequence-operations">Common Sequence Operations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#length">Length</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#concatenation">Concatenation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repetition">Repetition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#membership">Membership</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slicing">Slicing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sequence-functions-and-methods">Sequence Functions and Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#min-and-max">min() and max()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sum">sum()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#index">index()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#count">count()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_14/">String Manipulation</a>
                   </li>
@@ -105,7 +141,118 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="sequences">Sequences</h1>
+<p>Sequences are a fundamental concept in Python that represent ordered collections of items. They allow you to store multiple values in a single variable and perform a variety of operations on them. Python provides several built-in sequence types, including lists, tuples, strings, and ranges.</p>
+<p><strong>Types of Sequences</strong></p>
+<p>There are several types of sequences in Python. Here are some of them:</p>
+<h2 id="lists">Lists</h2>
+<p>Lists are mutable sequences, meaning their elements can be changed after the list is created. Lists are defined using square brackets <code>[]</code>.</p>
+<pre><code class="language-python"># Creating a list
+fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+
+# Modifying elements
+fruits[1] = &quot;blueberry&quot;
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry']
+</code></pre>
+<h2 id="tuples">Tuples</h2>
+<p>Tuples are immutable sequences, meaning their elements cannot be changed after the tuple is created. Tuples are defined using parentheses <code>()</code>.</p>
+<pre><code class="language-python"># Creating a tuple
+coordinates = (10.0, 20.0)
+
+# Accessing elements
+print(coordinates[0])  # Output: 10.0
+
+# Tuples cannot be modified
+# coordinates[1] = 30.0  # This will raise a TypeError
+</code></pre>
+<h2 id="strings">Strings</h2>
+<p>Strings are immutable sequences of characters. Strings are defined using single quotes <code>''</code>, double quotes <code>""</code>, or triple quotes <code>'''</code> / <code>"""</code>.</p>
+<pre><code class="language-python"># Creating a string
+greeting = &quot;Hello, world!&quot;
+
+# Accessing characters
+print(greeting[0])  # Output: H
+
+# Strings cannot be modified
+# greeting[0] = &quot;h&quot;  # This will raise a TypeError
+</code></pre>
+<h2 id="ranges">Ranges</h2>
+<p>Ranges represent immutable sequences of numbers and are commonly used for looping a specific number of times in for loops. They are defined using the <code>range()</code> function.</p>
+<pre><code class="language-python"># Creating a range
+numbers = range(5)
+
+# Converting range to list to view elements
+print(list(numbers))  # Output: [0, 1, 2, 3, 4]
+
+# Using range in a for loop
+for i in range(5):
+    print(i)  # Output: 0, 1, 2, 3, 4
+</code></pre>
+<h2 id="common-sequence-operations">Common Sequence Operations</h2>
+<h3 id="length">Length</h3>
+<p>You can use the <code>len()</code> function to get the number of elements in a sequence.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+print(len(fruits))  # Output: 3
+</code></pre>
+<h3 id="concatenation">Concatenation</h3>
+<p>You can concatenate sequences of the same type using the <code>+</code> operator.</p>
+<pre><code class="language-python">list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined = list1 + list2
+print(combined)  # Output: [1, 2, 3, 4, 5, 6]
+</code></pre>
+<h3 id="repetition">Repetition</h3>
+<p>You can repeat sequences using the <code>*</code> operator.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;]
+repeated_fruits = fruits * 3
+print(repeated_fruits)  # Output: ['apple', 'banana', 'apple', 'banana', 'apple', 'banana']
+</code></pre>
+<h3 id="membership">Membership</h3>
+<p>You can check if an item is in a sequence using the <code>in</code> operator.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+print(&quot;banana&quot; in fruits)  # Output: True
+print(&quot;orange&quot; in fruits)  # Output: False
+</code></pre>
+<h3 id="slicing">Slicing</h3>
+<p>You can extract a subset of a sequence using slicing. The syntax is <code>sequence[start:stop:step]</code>.</p>
+<pre><code class="language-python"># Creating a list
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Slicing from index 2 to 5
+print(numbers[2:6])  # Output: [2, 3, 4, 5]
+
+# Slicing with a step
+print(numbers[::2])  # Output: [0, 2, 4, 6, 8]
+
+# Reversing a sequence
+print(numbers[::-1])  # Output: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+</code></pre>
+<h2 id="sequence-functions-and-methods">Sequence Functions and Methods</h2>
+<p>Here are some of the most used functions and methods involving sequences:</p>
+<h3 id="min-and-max"><code>min()</code> and <code>max()</code></h3>
+<p>You can use the <code>min()</code> and <code>max()</code> functions to find the smallest and largest elements in a sequence.</p>
+<pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
+print(min(numbers))  # Output: 1
+print(max(numbers))  # Output: 5
+</code></pre>
+<h3 id="sum"><code>sum()</code></h3>
+<p>You can use the <code>sum()</code> function to calculate the sum of elements in a sequence.</p>
+<pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
+print(sum(numbers))  # Output: 15
+</code></pre>
+<h3 id="index"><code>index()</code></h3>
+<p>You can use the <code>index()</code> method to find the first occurrence of an element in a sequence.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+print(fruits.index(&quot;banana&quot;))  # Output: 1
+</code></pre>
+<h3 id="count"><code>count()</code></h3>
+<p>You can use the <code>count()</code> method to count the number of occurrences of an element in a sequence.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;banana&quot;]
+print(fruits.count(&quot;banana&quot;))  # Output: 2
+</code></pre>
               
             </div>
           </div><footer>

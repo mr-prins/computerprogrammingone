@@ -59,6 +59,24 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_06/">Operators</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Functions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#defining-a-function">Defining a Function</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calling-a-function">Calling a Function</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters-and-arguments">Parameters and Arguments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#return-statement">Return Statement</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#call-stack">Call Stack</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#traceback">Traceback</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-scope-and-lifetime">Function Scope and Lifetime</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recursive-functions">Recursive Functions</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_08/">Conditionals</a>
                   </li>
@@ -105,7 +123,96 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="functions">Functions</h1>
+<p>Functions are one of the most important building blocks in Python. They allow you to group code into reusable blocks, making your programs more modular, readable, and maintainable.</p>
+<p>A function is a block of code that performs a specific task. Functions help you to avoid repeating code by allowing you to define it once and reuse it as needed. Functions can take inputs, perform operations, and return outputs.</p>
+<h2 id="defining-a-function">Defining a Function</h2>
+<p>To define a function in Python, use the <code>def</code> keyword followed by the function name and parentheses <code>()</code> which may include parameters.</p>
+<pre><code class="language-python">def greet(name):
+    print(f&quot;Hello, {name}!&quot;)
+</code></pre>
+<h2 id="calling-a-function">Calling a Function</h2>
+<p>To call a function, simply use its name followed by parentheses, including any arguments required by the function.</p>
+<pre><code class="language-python">greet(&quot;Alice&quot;)  # Output: Hello, Alice!
+</code></pre>
+<h2 id="parameters-and-arguments">Parameters and Arguments</h2>
+<p>Parameters are variables defined in the function signature. Arguments are the values you pass to the function when you call it.</p>
+<pre><code class="language-python">def add(a, b):
+    return a + b
+
+result = add(3, 4)  # Arguments 3 and 4 are passed to parameters a and b
+print(result)  # Output: 7
+</code></pre>
+<h2 id="return-statement">Return Statement</h2>
+<p>The <code>return</code> statement is used to send a result back from the function to the caller. Once <code>return</code> is executed, the function terminates.</p>
+<pre><code class="language-python">def square(x):
+    return x * x
+
+result = square(5)
+print(result)  # Output: 25
+</code></pre>
+<h2 id="call-stack">Call Stack</h2>
+<p>The call stack is a mechanism that keeps track of function calls. When a function is called, a frame is added to the stack. When the function returns, the frame is removed. The call stack helps manage the order in which functions are executed and their respective scopes.</p>
+<pre><code class="language-python">def func1():
+    print(&quot;Start func1&quot;)
+    func2()
+    print(&quot;End func1&quot;)
+
+def func2():
+    print(&quot;Start func2&quot;)
+    func3()
+    print(&quot;End func2&quot;)
+
+def func3():
+    print(&quot;Start func3&quot;)
+    print(&quot;End func3&quot;)
+
+func1()
+</code></pre>
+<p>Output:</p>
+<pre><code>Start func1
+Start func2
+Start func3
+End func3
+End func2
+End func1
+</code></pre>
+<p>In this example, <code>func1</code> calls <code>func2</code>, and <code>func2</code> calls <code>func3</code>. The call stack manages these calls and ensures each function returns in the correct order.</p>
+<h2 id="traceback">Traceback</h2>
+<p>A traceback is a report that Python generates when an error occurs in your program. It shows the call stack at the point where the error happened, helping you to diagnose and fix issues.</p>
+<pre><code class="language-python">def divide(x, y):
+    return x / y
+
+result = divide(10, 0)
+</code></pre>
+<p>Output:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;example.py&quot;, line 5, in &lt;module&gt;
+    result = divide(10, 0)
+  File &quot;example.py&quot;, line 2, in divide
+    return x / y
+ZeroDivisionError: division by zero
+</code></pre>
+<p>The traceback shows that the error occurred in the <code>divide</code> function because of a division by zero.</p>
+<h2 id="function-scope-and-lifetime">Function Scope and Lifetime</h2>
+<p>Variables defined inside a function are local to that function. They exist only during the function's execution and are not accessible outside.</p>
+<pre><code class="language-python">def func():
+    x = 10  # x is local to func
+    print(x)
+
+func()
+print(x)  # Error: x is not defined outside func
+</code></pre>
+<h2 id="recursive-functions">Recursive Functions</h2>
+<p>A function that calls itself is known as a recursive function. Recursion can be used to solve problems that can be broken down into simpler, repetitive tasks. This will be a concept we will work in depth later on during this course.</p>
+<pre><code class="language-python">def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+</code></pre>
               
             </div>
           </div><footer>

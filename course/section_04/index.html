@@ -53,6 +53,38 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_03/">Code Structure</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Expressions and Variables</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#expressions">Expressions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#types-of-expressions">Types of Expressions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#arithmetic-expressions">Arithmetic Expressions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#string-expressions">String Expressions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boolean-expressions">Boolean Expressions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-calls">Function Calls</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#evaluating-expressions">Evaluating Expressions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#declaring-and-initializing-variables">Declaring and Initializing Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-variables">Using Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variable-naming-rules">Variable Naming Rules</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#constants">Constants</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_05/">Assignments</a>
                   </li>
@@ -105,7 +137,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="expressions-and-variables">Expressions and Variables</h1>
+<h2 id="expressions">Expressions</h2>
+<p>An expression in Python is a combination of values, variables, and operators that, when evaluated, produces a new value. Expressions are fundamental building blocks in programming and are used to perform calculations, manipulate data, and control the flow of a program.</p>
+<h3 id="types-of-expressions">Types of Expressions</h3>
+<h4 id="arithmetic-expressions">Arithmetic Expressions</h4>
+<p>These involve mathematical operations like addition, subtraction, multiplication, and division.</p>
+<pre><code class="language-python">   5 + 3       # Addition, evaluates to 8
+   10 - 2      # Subtraction, evaluates to 8
+   4 * 2       # Multiplication, evaluates to 8
+   16 / 2      # Division, evaluates to 8.0
+</code></pre>
+<h4 id="string-expressions">String Expressions</h4>
+<p>These involve operations on strings, such as concatenation.</p>
+<pre><code class="language-python">   &quot;Hello, &quot; + &quot;world!&quot;  # Concatenation, evaluates to &quot;Hello, world!&quot;
+</code></pre>
+<h4 id="boolean-expressions">Boolean Expressions</h4>
+<p>These involve logical operations and comparisons, resulting in a Boolean value (<code>True</code> or <code>False</code>).</p>
+<pre><code class="language-python">   5 &gt; 3        # Greater than, evaluates to True
+   10 == 2 * 5  # Equality, evaluates to True
+   4 != 2 + 2   # Inequality, evaluates to False
+</code></pre>
+<h4 id="function-calls">Function Calls</h4>
+<p>Expressions can also involve calling functions, which may return values.</p>
+<pre><code class="language-python">   len(&quot;Hello&quot;)  # Function call, evaluates to 5
+</code></pre>
+<h3 id="evaluating-expressions">Evaluating Expressions</h3>
+<p>When Python encounters an expression, it evaluates it to produce a value. This value can then be used in further calculations, assigned to variables, or passed to functions.</p>
+<pre><code class="language-python">result = 5 + 3  # The expression 5 + 3 evaluates to 8, which is assigned to the variable result
+print(result)   # This prints 8
+</code></pre>
+<h2 id="variables">Variables</h2>
+<p>A variable is a named storage location in memory that holds a value. Variables allow you to store data and refer to it later in your program. You can think of a variable as a container for data.</p>
+<p>Variables are essential because they allow you to:</p>
+<ul>
+<li>Store and reuse values.</li>
+<li>Make your code more readable and maintainable.</li>
+<li>Write flexible and dynamic programs.</li>
+</ul>
+<h3 id="declaring-and-initializing-variables">Declaring and Initializing Variables</h3>
+<p>To declare a variable, you simply assign a value to it using the equals sign (<code>=</code>). This process is called initialization.</p>
+<pre><code class="language-python">age = 16         # The variable age is assigned the value 16
+name = &quot;Alice&quot;   # The variable name is assigned the value &quot;Alice&quot;
+is_student = True  # The variable is_student is assigned the value True
+</code></pre>
+<h3 id="using-variables">Using Variables</h3>
+<p>Once you have declared a variable, you can use it in expressions, pass it to functions, and modify its value.</p>
+<pre><code class="language-python"># Using variables in expressions
+x = 10
+y = 5
+sum = x + y  # sum is assigned the value 15
+
+# Passing variables to functions
+def greet(person):
+    print(f&quot;Hello, {person}!&quot;)
+
+greet(name)  # This prints &quot;Hello, Alice!&quot;
+
+# Modifying variables
+count = 0
+count = count + 1  # count is now 1
+count += 2         # count is now 3
+</code></pre>
+<h3 id="variable-naming-rules">Variable Naming Rules</h3>
+<p>When naming variables in Python, follow these rules:</p>
+<ul>
+<li>Use letters (a-z, A-Z), digits (0-9), and underscores (_).</li>
+<li>Do not start a variable name with a digit.</li>
+<li>Variable names are case-sensitive (<code>age</code> and <code>Age</code> are different variables).</li>
+<li>Choose meaningful names that describe the data they hold.</li>
+</ul>
+<p>Valid examples:</p>
+<pre><code class="language-python">student_name = &quot;John&quot;
+total_score = 95
+is_enrolled = True
+</code></pre>
+<p>Invalid examples:</p>
+<pre><code class="language-python">2nd_place = &quot;Bob&quot;  # Starts with a digit
+total-score = 95   # Uses a hyphen instead of an underscore
+class = &quot;Math&quot;     # Uses a reserved keyword
+</code></pre>
+<p>Good practice dictates that PEP8 rules for naming variables should be followed. <a href="https://peps.python.org/pep-0008/">Here's a link to it.</a></p>
+<h2 id="constants">Constants</h2>
+<p>A constant is similar to a variable but is meant to remain unchanged throughout the program. By convention, constants are written in all uppercase letters.</p>
+<pre><code>PI = 3.14159
+MAX_STUDENTS = 30
+</code></pre>
               
             </div>
           </div><footer>

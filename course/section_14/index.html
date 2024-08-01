@@ -73,6 +73,30 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_13/">Sequences</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">String Manipulation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-strings">Creating Strings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#accessing-characters-in-a-string">Accessing Characters in a String</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slicing-strings">Slicing Strings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#string-methods">String Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#changing-case">Changing Case</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stripping-whitespace">Stripping Whitespace</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#finding-and-replacing">Finding and Replacing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#splitting-and-joining">Splitting and Joining</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#string-formatting">String Formatting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#practical-applications">Practical Applications</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_15/">Exceptions</a>
                   </li>
@@ -105,7 +129,119 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="string-manipulation">String Manipulation</h1>
+<p>Strings are sequences of characters, and Python provides a variety of methods and operations to manipulate strings. Understanding how to work with strings is essential for tasks like processing text data, building user interfaces, and more.</p>
+<h2 id="creating-strings">Creating Strings</h2>
+<p>Strings can be created using single quotes <code>''</code>, double quotes <code>""</code>, or triple quotes <code>'''</code> / <code>"""</code>.</p>
+<pre><code class="language-python">single_quote_string = 'Hello'
+double_quote_string = &quot;World&quot;
+triple_quote_string = '''This is a
+multi-line string.'''
+</code></pre>
+<h2 id="accessing-characters-in-a-string">Accessing Characters in a String</h2>
+<p>You can access individual characters in a string using indexing. Python uses zero-based indexing.</p>
+<pre><code class="language-python">greeting = &quot;Hello, World!&quot;
+
+# Accessing characters
+print(greeting[0])  # Output: H
+print(greeting[-1]) # Output: !
+</code></pre>
+<h2 id="slicing-strings">Slicing Strings</h2>
+<p>Slicing allows you to extract a substring from a string. The syntax is <code>string[start:stop:step]</code>.</p>
+<pre><code class="language-python"># Creating a string
+greeting = &quot;Hello, World!&quot;
+
+# Slicing the string
+print(greeting[0:5])  # Output: Hello
+print(greeting[7:12]) # Output: World
+print(greeting[::2])  # Output: Hlo ol!
+</code></pre>
+<h2 id="string-methods">String Methods</h2>
+<p>Python provides many built-in methods to manipulate strings. Here are some commonly used string methods:</p>
+<h3 id="changing-case">Changing Case</h3>
+<ul>
+<li><code>upper()</code>: Converts all characters to uppercase.</li>
+<li><code>lower()</code>: Converts all characters to lowercase.</li>
+<li><code>capitalize()</code>: Capitalizes the first character of the string.</li>
+</ul>
+<pre><code class="language-python">message = &quot;hello, world!&quot;
+
+print(message.upper())      # Output: HELLO, WORLD!
+print(message.lower())      # Output: hello, world!
+print(message.capitalize()) # Output: Hello, world!
+</code></pre>
+<h3 id="stripping-whitespace">Stripping Whitespace</h3>
+<ul>
+<li><code>strip()</code>: Removes leading and trailing whitespace.</li>
+<li><code>lstrip()</code>: Removes leading whitespace.</li>
+<li><code>rstrip()</code>: Removes trailing whitespace.</li>
+</ul>
+<pre><code class="language-python">message = &quot;   Hello, World!   &quot;
+
+print(message.strip())  # Output: Hello, World!
+print(message.lstrip()) # Output: Hello, World!
+print(message.rstrip()) # Output:    Hello, World!
+</code></pre>
+<h3 id="finding-and-replacing">Finding and Replacing</h3>
+<ul>
+<li><code>find()</code>: Returns the index of the first occurrence of a substring.</li>
+<li><code>replace()</code>: Replaces all occurrences of a substring with another substring.</li>
+</ul>
+<pre><code class="language-python">message = &quot;Hello, World!&quot;
+
+print(message.find(&quot;World&quot;))       # Output: 7
+print(message.replace(&quot;World&quot;, &quot;Python&quot;)) # Output: Hello, Python!
+</code></pre>
+<h3 id="splitting-and-joining">Splitting and Joining</h3>
+<ul>
+<li><code>split()</code>: Splits the string into a list of substrings based on a delimiter.</li>
+<li><code>join()</code>: Joins a list of strings into a single string with a specified delimiter.</li>
+</ul>
+<pre><code class="language-python">message = &quot;Hello, World! How are you?&quot;
+
+words = message.split()
+print(words)  # Output: ['Hello,', 'World!', 'How', 'are', 'you?']
+
+joined_message = &quot; &quot;.join(words)
+print(joined_message)  # Output: Hello, World! How are you?
+</code></pre>
+<h2 id="string-formatting">String Formatting</h2>
+<p>String formatting allows you to create strings with dynamic content.</p>
+<pre><code class="language-python">name = &quot;Alice&quot;
+age = 30
+
+message = f&quot;My name is {name} and I am {age} years old.&quot;
+print(message)  # Output: My name is Alice and I am 30 years old.
+</code></pre>
+<h2 id="practical-applications">Practical Applications</h2>
+<p><strong>Validating User Input:</strong></p>
+<p>You can use string methods to validate and clean user input.</p>
+<pre><code class="language-python">user_input = &quot;  Hello, Python!  &quot;
+
+# Strip leading/trailing whitespace and convert to uppercase
+cleaned_input = user_input.strip().upper()
+print(cleaned_input)  # Output: HELLO, PYTHON!
+</code></pre>
+<p><strong>Parsing CSV Data:</strong></p>
+<p>You can use string splitting to parse CSV (Comma-Separated Values) data.</p>
+<pre><code class="language-python">csv_data = &quot;name,age,city\nAlice,30,New York\nBob,25,Los Angeles&quot;
+
+# Split into lines
+lines = csv_data.split(&quot;\n&quot;)
+
+# Process each line
+for line in lines:
+    fields = line.split(&quot;,&quot;)
+    print(fields)  # Output: ['name', 'age', 'city'], ['Alice', '30', 'New York'], ['Bob', '25', 'Los Angeles']
+</code></pre>
+<p><strong>Creating Slugs for URLs:</strong></p>
+<p>You can use string manipulation to create URL-friendly slugs.</p>
+<pre><code class="language-python">title = &quot;Hello, World! Welcome to Python.&quot;
+
+# Convert to lowercase, replace spaces with hyphens, and remove punctuation
+slug = title.lower().replace(&quot; &quot;, &quot;-&quot;).replace(&quot;!&quot;, &quot;&quot;).replace(&quot;,&quot;, &quot;&quot;).replace(&quot;.&quot;, &quot;&quot;)
+print(slug)  # Output: hello-world-welcome-to-python
+</code></pre>
               
             </div>
           </div><footer>

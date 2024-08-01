@@ -57,6 +57,106 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_05/">Assignments</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Operators</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#arithmetic-operators">Arithmetic Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#addition">Addition (+)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subtraction-">Subtraction (-)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multiplication">Multiplication (*)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#division">Division (/)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#floor-division">Floor Division (//)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modulus">Modulus (%)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exponentiation">Exponentiation(**)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assignment-operators">Assignment Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-assignment">Basic Assignment (=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#addition-assignment">Addition Assignment (+=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subtraction-assignment-">Subtraction Assignment (-=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multiplication-assignment">Multiplication Assignment (*=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#division-assignment">Division Assignment (/=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modulus-assignment">Modulus Assignment (%=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exponentiation-assignment">Exponentiation Assignment (**=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#floor-division-assignment">Floor Division Assignment (//=)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comparison-operators">Comparison Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#equal-to">Equal to (==)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#not-equal-to">Not equal to (!=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#greater-than">Greater than (&gt;)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#less-than">Less than (&lt;)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#greater-than-or-equal-to">Greater than or equal to (&gt;=)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#less-than-or-equal-to">Less than or equal to (&lt;=)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logical-operators">Logical Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#and">and</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#or">or</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#not">not</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#identity-operators">Identity Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#is">is</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#is-not">is not</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#membership-operators">Membership Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#in">in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#not-in">not in</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bitwise-operators">Bitwise Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#and_1">AND (&amp;)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#or_1">OR (|)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xor">XOR (^)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#not_1">NOT (~)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#left-shift">Left Shift (&lt;&lt;)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#right-shift">Right Shift (&gt;&gt;)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#operator-precedence">Operator Precedence</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_07/">Functions</a>
                   </li>
@@ -105,7 +205,280 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="operators">Operators</h1>
+<p>Operators are special symbols in Python that perform operations on values and variables. They are the building blocks of expressions, allowing you to perform calculations, comparisons, and logical operations. In this section, we'll explore different types of operators and how to use them.</p>
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<p>Arithmetic operators are used to perform basic mathematical operations like addition, subtraction, multiplication, and division.</p>
+<h3 id="addition">Addition (<code>+</code>)</h3>
+<pre><code class="language-python">   x = 5
+   y = 3
+   result = x + y  # Adds x and y
+   print(result)  # Output: 8
+</code></pre>
+<h3 id="subtraction-">Subtraction (<code>-</code>)</h3>
+<pre><code class="language-python">   x = 10
+   y = 4
+   result = x - y  # Subtracts y from x
+   print(result)  # Output: 6
+</code></pre>
+<h3 id="multiplication">Multiplication (<code>*</code>)</h3>
+<pre><code class="language-python">   x = 7
+   y = 6
+   result = x * y  # Multiplies x by y
+   print(result)  # Output: 42
+</code></pre>
+<h3 id="division">Division (<code>/</code>)</h3>
+<pre><code class="language-python">   x = 20
+   y = 4
+   result = x / y  # Divides x by y
+   print(result)  # Output: 5.0
+</code></pre>
+<h3 id="floor-division">Floor Division (<code>//</code>)</h3>
+<pre><code class="language-python">   x = 20
+   y = 3
+   result = x // y  # Divides x by y and returns the integer part
+   print(result)  # Output: 6
+</code></pre>
+<h3 id="modulus">Modulus (<code>%</code>)</h3>
+<pre><code class="language-python">   x = 10
+   y = 3
+   result = x % y  # Returns the remainder of x divided by y
+   print(result)  # Output: 1
+</code></pre>
+<h3 id="exponentiation">Exponentiation(<code>**</code>)</h3>
+<pre><code class="language-python">   x = 2
+   y = 3
+   result = x ** y  # Raises x to the power of y
+   print(result)  # Output: 8
+</code></pre>
+<h2 id="assignment-operators">Assignment Operators</h2>
+<p>Assignment operators are used to assign values to variables. We've already seen the basics of these in the previous section, but there are also other assignment operators that are worth mentioning.</p>
+<h3 id="basic-assignment">Basic Assignment (<code>=</code>)</h3>
+<pre><code class="language-python">   x = 10  # Assigns the value 10 to x
+   print(x)  # Output: 10
+</code></pre>
+<h3 id="addition-assignment">Addition Assignment (<code>+=</code>)</h3>
+<pre><code class="language-python">   x = 5
+   x += 3  # Equivalent to x = x + 3
+   print(x)  # Output: 8
+</code></pre>
+<h3 id="subtraction-assignment-">Subtraction Assignment (<code>-=</code>)</h3>
+<pre><code class="language-python">   y = 10
+   y -= 4  # Equivalent to y = y - 4
+   print(y)  # Output: 6
+</code></pre>
+<h3 id="multiplication-assignment">Multiplication Assignment (<code>*=</code>)</h3>
+<pre><code class="language-python">   z = 7
+   z *= 2  # Equivalent to z = z * 2
+   print(z)  # Output: 14
+</code></pre>
+<h3 id="division-assignment">Division Assignment (<code>/=</code>)</h3>
+<pre><code class="language-python">   a = 20
+   a /= 4  # Equivalent to a = a / 4
+   print(a)  # Output: 5.0
+</code></pre>
+<h3 id="modulus-assignment">Modulus Assignment (<code>%=</code>)</h3>
+<pre><code class="language-python">   b = 10
+   b %= 3  # Equivalent to b = b % 3
+   print(b)  # Output: 1
+</code></pre>
+<h3 id="exponentiation-assignment">Exponentiation Assignment (<code>**=</code>)</h3>
+<pre><code class="language-python">   c = 2
+   c **= 3  # Equivalent to c = c ** 3
+   print(c)  # Output: 8
+</code></pre>
+<h3 id="floor-division-assignment">Floor Division Assignment (<code>//=</code>)</h3>
+<pre><code class="language-python">   d = 20
+   d //= 3  # Equivalent to d = d // 3
+   print(d)  # Output: 6
+</code></pre>
+<h2 id="comparison-operators">Comparison Operators</h2>
+<p>Comparison operators are used to compare two values and return a <em>Boolean</em> result (<code>True</code> or <code>False</code>).</p>
+<h3 id="equal-to">Equal to (<code>==</code>)</h3>
+<pre><code class="language-python">   x = 5
+   y = 5
+   result = (x == y)  # Checks if x is equal to y
+   print(result)  # Output: True
+</code></pre>
+<h3 id="not-equal-to">Not equal to (<code>!=</code>)</h3>
+<pre><code class="language-python">   x = 5
+   y = 3
+   result = (x != y)  # Checks if x is not equal to y
+   print(result)  # Output: True
+</code></pre>
+<h3 id="greater-than">Greater than (<code>&gt;</code>)</h3>
+<pre><code class="language-python">   x = 7
+   y = 4
+   result = (x &gt; y)  # Checks if x is greater than y
+   print(result)  # Output: True
+</code></pre>
+<h3 id="less-than">Less than (<code>&lt;</code>)</h3>
+<pre><code class="language-python">   x = 2
+   y = 8
+   result = (x &lt; y)  # Checks if x is less than y
+   print(result)  # Output: True
+</code></pre>
+<h3 id="greater-than-or-equal-to">Greater than or equal to (<code>&gt;=</code>)</h3>
+<pre><code class="language-python">   x = 6
+   y = 6
+   result = (x &gt;= y)  # Checks if x is greater than or equal to y
+   print(result)  # Output: True
+</code></pre>
+<h3 id="less-than-or-equal-to">Less than or equal to (<code>&lt;=</code>)</h3>
+<pre><code class="language-python">   x = 3
+   y = 5
+   result = (x &lt;= y)  # Checks if x is less than or equal to y
+   print(result)  # Output: True
+</code></pre>
+<h2 id="logical-operators">Logical Operators</h2>
+<p>Logical operators are used to combine multiple Boolean expressions.</p>
+<h3 id="and"><code>and</code></h3>
+<pre><code class="language-python">   x = True
+   y = False
+   result = x and y  # Checks if both x and y are True
+   print(result)  # Output: False
+</code></pre>
+<h3 id="or"><code>or</code></h3>
+<pre><code class="language-python">   x = True
+   y = False
+   result = x or y  # Checks if either x or y is True
+   print(result)  # Output: True
+</code></pre>
+<h3 id="not"><code>not</code></h3>
+<pre><code class="language-python">   x = True
+   result = not x  # Inverts the value of x
+   print(result)  # Output: False
+</code></pre>
+<h2 id="identity-operators">Identity Operators</h2>
+<p>Identity operators are used to compare the memory locations of two objects.</p>
+<h3 id="is"><code>is</code></h3>
+<pre><code class="language-python">   x = [1, 2, 3]
+   y = x
+   z = [1, 2, 3]
+   print(x is y)  # Output: True, because y is the same object as x
+   print(x is z)  # Output: False, because z is a different object with the same contents
+</code></pre>
+<h3 id="is-not"><code>is not</code></h3>
+<pre><code class="language-python">   a = 10
+   b = 20
+   print(a is not b)  # Output: True, because a and b are not the same object
+</code></pre>
+<h2 id="membership-operators">Membership Operators</h2>
+<p>Membership operators are used to test if a sequence contains a certain value.</p>
+<h3 id="in"><code>in</code></h3>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+   print(&quot;banana&quot; in fruits)  # Output: True, because &quot;banana&quot; is in the list
+</code></pre>
+<h3 id="not-in"><code>not in</code></h3>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+   print(&quot;orange&quot; not in fruits)  # Output: True, because &quot;orange&quot; is not in the list
+</code></pre>
+<h2 id="bitwise-operators">Bitwise Operators</h2>
+<p>Bitwise operators are used to perform operations on binary numbers.</p>
+<h3 id="and_1"><em>AND</em> (<code>&amp;</code>)</h3>
+<pre><code class="language-python">   x = 5  # 0101 in binary
+   y = 3  # 0011 in binary
+   print(x &amp; y)  # Output: 1 (0001 in binary)
+</code></pre>
+<h3 id="or_1"><em>OR</em> (<code>|</code>)</h3>
+<pre><code class="language-python">   x = 5  # 0101 in binary
+   y = 3  # 0011 in binary
+   print(x | y)  # Output: 7 (0111 in binary)
+</code></pre>
+<h3 id="xor"><em>XOR</em> (<code>^</code>)</h3>
+<pre><code class="language-python">   x = 5  # 0101 in binary
+   y = 3  # 0011 in binary
+   print(x ^ y)  # Output: 6 (0110 in binary)
+</code></pre>
+<h3 id="not_1"><em>NOT</em> (<code>~</code>)</h3>
+<pre><code class="language-python">   x = 5  # 0101 in binary
+   print(~x)  # Output: -6 (inverts the bits, giving 1010 in binary, which is -6 in two's complement form)
+</code></pre>
+<h3 id="left-shift">Left Shift (<code>&lt;&lt;</code>)</h3>
+<pre><code class="language-python">   x = 5  # 0101 in binary
+   print(x &lt;&lt; 1)  # Output: 10 (1010 in binary, shifts bits left by 1 position)
+</code></pre>
+<h3 id="right-shift">Right Shift (<code>&gt;&gt;</code>)</h3>
+<pre><code class="language-python">   x = 5  # 0101 in binary
+   print(x &gt;&gt; 1)  # Output: 2 (0010 in binary, shifts bits right by 1 position)
+</code></pre>
+<h2 id="operator-precedence">Operator Precedence</h2>
+<p>Operator precedence determines the order in which operators are evaluated in expressions. Operators with higher precedence are evaluated before operators with lower precedence.</p>
+<p><strong>Arithmetic Operators</strong></p>
+<pre><code class="language-python">   x = 5 + 2 * 3  # Multiplication has higher precedence than addition
+   print(x)  # Output: 11 (2 * 3 is evaluated first, then 5 + 6)
+</code></pre>
+<p><strong>Using Parentheses to Change Precedence</strong></p>
+<pre><code class="language-python">   x = (5 + 2) * 3  # Parentheses change the order of evaluation
+   print(x)  # Output: 21 (5 + 2 is evaluated first, then 7 * 3)
+</code></pre>
+<p><strong>Combination of Different Operators</strong></p>
+<pre><code class="language-python">   x = 5 + 2 * 3 &gt; 10 - 2
+   print(x)  # Output: True (2 * 3 is evaluated first, then 5 + 6, then 10 - 2, finally 11 &gt; 8)
+</code></pre>
+<p>Here's a table summarizing the operator precedence in Python, from highest to lowest:</p>
+<table>
+<thead>
+<tr>
+<th>Precedence Level</th>
+<th>Operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (highest)</td>
+<td><code>()</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>**</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>+x</code>, <code>-x</code>, <code>~x</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>*</code>, <code>/</code>, <code>//</code>, <code>%</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>+</code>, <code>-</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>&lt;&lt;</code>, <code>&gt;&gt;</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>&amp;</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>^</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>binary or</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>in</code>, <code>not in</code>, <code>is</code>, <code>is not</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>!=</code>, <code>==</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>not x</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>and</code></td>
+</tr>
+<tr>
+<td>13 (lowest)</td>
+<td><code>or</code></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>

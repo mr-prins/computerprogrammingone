@@ -75,6 +75,24 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_14/">String Manipulation</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Exceptions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#understanding-exceptions">Understanding Exceptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-exceptions">Common Exceptions:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exception-handling">Exception Handling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#handling-multiple-exceptions">Handling Multiple Exceptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-else-and-finally">Using else and finally</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raising-exceptions">Raising Exceptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-custom-exceptions">Creating Custom Exceptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#practical-applications">Practical Applications</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <ul>
@@ -105,7 +123,108 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="exceptions-and-exception-handling-in-python">Exceptions and Exception Handling in Python</h1>
+<p>Exceptions are errors that occur during the execution of a program. When an exception occurs, the normal flow of the program is interrupted, and Python raises an error message. Exception handling allows you to manage these errors gracefully and maintain the flow of your program.</p>
+<h2 id="understanding-exceptions">Understanding Exceptions</h2>
+<p>An exception is an event that disrupts the normal execution of your program. Common exceptions include division by zero, file not found, and index out of range.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Division by zero exception
+result = 10 / 0  # This will raise a ZeroDivisionError
+</code></pre>
+<h2 id="common-exceptions">Common Exceptions:</h2>
+<ul>
+<li><code>ZeroDivisionError</code>: Raised when you divide by zero.</li>
+<li><code>IndexError</code>: Raised when you access an invalid index in a list or other sequence.</li>
+<li><code>KeyError</code>: Raised when you access a dictionary with a key that does not exist.</li>
+<li><code>ValueError</code>: Raised when a function receives an argument of the correct type but inappropriate value.</li>
+<li><code>TypeError</code>: Raised when an operation or function is applied to an object of inappropriate type.</li>
+<li><code>FileNotFoundError</code>: Raised when an attempt to open a file that does not exist fails.</li>
+</ul>
+<h2 id="exception-handling">Exception Handling</h2>
+<p>You can handle exceptions using <code>try</code> and <code>except</code> blocks. This allows you to catch and handle errors gracefully without stopping the execution of your program.</p>
+<p><strong>Basic Syntax:</strong></p>
+<pre><code class="language-python">try:
+    # Code that might raise an exception
+    pass
+except ExceptionType:
+    # Code to execute if an exception occurs
+    pass
+</code></pre>
+<pre><code class="language-python">try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print(&quot;Cannot divide by zero!&quot;)
+</code></pre>
+<h2 id="handling-multiple-exceptions">Handling Multiple Exceptions</h2>
+<p>You can handle multiple exceptions by specifying multiple <code>except</code> blocks.</p>
+<pre><code class="language-python">try:
+    number = int(input(&quot;Enter a number: &quot;))
+    result = 10 / number
+except ZeroDivisionError:
+    print(&quot;Cannot divide by zero!&quot;)
+except ValueError:
+    print(&quot;Invalid input! Please enter a valid number.&quot;)
+</code></pre>
+<h2 id="using-else-and-finally">Using <code>else</code> and <code>finally</code></h2>
+<p>The <code>else</code> block is executed if no exceptions are raised in the <code>try</code> block. The <code>finally</code> block is executed regardless of whether an exception is raised or not, and is often used for cleanup actions.</p>
+<pre><code class="language-python">try:
+    number = int(input(&quot;Enter a number: &quot;))
+    result = 10 / number
+except ZeroDivisionError:
+    print(&quot;Cannot divide by zero!&quot;)
+except ValueError:
+    print(&quot;Invalid input! Please enter a valid number.&quot;)
+else:
+    print(f&quot;The result is {result}&quot;)
+finally:
+    print(&quot;Execution complete.&quot;)
+</code></pre>
+<h2 id="raising-exceptions">Raising Exceptions</h2>
+<p>You can raise exceptions using the <code>raise</code> keyword. This is useful when you want to enforce certain conditions in your code.</p>
+<pre><code class="language-python">def check_age(age):
+    if age &lt; 0:
+        raise ValueError(&quot;Age cannot be negative!&quot;)
+    return age
+
+try:
+    age = check_age(-1)
+except ValueError as e:
+    print(e)
+</code></pre>
+<h2 id="creating-custom-exceptions">Creating Custom Exceptions</h2>
+<p>You can create custom exceptions by defining a new class that inherits from the built-in <code>Exception</code> class.</p>
+<pre><code class="language-python">class CustomError(Exception):
+    pass
+
+def test_custom_exception():
+    raise CustomError(&quot;This is a custom exception!&quot;)
+
+try:
+    test_custom_exception()
+except CustomError as e:
+    print(e)
+</code></pre>
+<h2 id="practical-applications">Practical Applications</h2>
+<p><strong>File Handling with Exception Handling:</strong></p>
+<p>Exception handling is often used when working with files to handle scenarios where a file might not exist or cannot be opened.</p>
+<pre><code class="language-python">try:
+    with open(&quot;nonexistent_file.txt&quot;, &quot;r&quot;) as file:
+        content = file.read()
+except FileNotFoundError:
+    print(&quot;The file does not exist.&quot;)
+</code></pre>
+<p><strong>Input Validation:</strong></p>
+<p>Exception handling can be used to validate user input and handle invalid inputs gracefully.</p>
+<pre><code class="language-python">def get_integer_input(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print(&quot;Invalid input! Please enter a valid integer.&quot;)
+
+age = get_integer_input(&quot;Enter your age: &quot;)
+print(f&quot;Your age is {age}.&quot;)
+</code></pre>
               
             </div>
           </div><footer>

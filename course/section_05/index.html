@@ -55,6 +55,14 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_04/">Expressions and Variables</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Assignments</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#in-place-assignments">In-Place Assignments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#multiple-assignments">Multiple Assignments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#two-variable-swap">Two-Variable Swap</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_06/">Operators</a>
                   </li>
@@ -105,7 +113,65 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="assignments">Assignments</h1>
+<p>Assignment in Python is the process or tool used to store values in variables. They allow us to keep track of data and use it throughout our programs. In this section, we'll explore different types of assignments.</p>
+<h2 id="in-place-assignments">In-Place Assignments</h2>
+<p>In-place assignments allow you to update the value of a variable using its current value. This is done with special operators that combine assignment with an arithmetic operation. This process will be revisited with more detail when we cover operations in Python.</p>
+<p>In-place assignments make your code more concise and can be easier to read.</p>
+<p>Here are some examples:</p>
+<p><strong>Addition(<code>+=</code>)</strong></p>
+<pre><code class="language-python">   x = 5
+   x += 3  # Equivalent to x = x + 3
+   print(x)  # Output: 8
+</code></pre>
+<p><strong>Subtraction(<code>-=</code>)</strong></p>
+<pre><code class="language-python">   y = 10
+   y -= 4  # Equivalent to y = y - 4
+   print(y)  # Output: 6
+</code></pre>
+<p><strong>Multiplication(<code>*=</code>)</strong></p>
+<pre><code class="language-python">   z = 7
+   z *= 2  # Equivalent to z = z * 2
+   print(z)  # Output: 14
+</code></pre>
+<p><strong>Division(<code>/=</code>)</strong></p>
+<pre><code class="language-python">   a = 20
+   a /= 4  # Equivalent to a = a / 4
+   print(a)  # Output: 5.0
+</code></pre>
+<h2 id="multiple-assignments">Multiple Assignments</h2>
+<p>Python allows you to assign values to multiple variables simultaneously. This can make your code more efficient and easier to read:</p>
+<p><strong>Assigning Multiple Values at once:</strong></p>
+<pre><code class="language-python">   x, y, z = 1, 2, 3
+   print(x)  # Output: 1
+   print(y)  # Output: 2
+   print(z)  # Output: 3
+</code></pre>
+<p><strong>Unpacking Values from a List or Tuple</strong></p>
+<pre><code class="language-python">   coordinates = (4, 5)
+   x, y = coordinates
+   print(x)  # Output: 4
+   print(y)  # Output: 5
+</code></pre>
+<h2 id="two-variable-swap">Two-Variable Swap</h2>
+<p>Swapping the values of two variables is a common task in programming. Python makes this easy with a simple syntax.</p>
+<p><strong>Traditional Swap Using a Temporary Variable</strong></p>
+<pre><code class="language-python">   x = 1
+   y = 2
+   temp = x
+   x = y
+   y = temp
+   print(x)  # Output: 2
+   print(y)  # Output: 1
+</code></pre>
+<p><strong>Pythonic Swap Using Multiple Assignments</strong></p>
+<pre><code class="language-python">   a = 3
+   b = 4
+   a, b = b, a  # Swaps the values of a and b
+   print(a)  # Output: 4
+   print(b)  # Output: 3
+</code></pre>
+<p>The Pythonic way of swapping values is more concise and avoids the need for a temporary variable, making your code cleaner.</p>
               
             </div>
           </div><footer>

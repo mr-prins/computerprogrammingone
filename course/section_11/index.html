@@ -67,6 +67,42 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_10/">Loops</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Boolean Expressions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#boolean-values">Boolean Values</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pythonic-booleans">Pythonic Booleans</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#truthy-values">Truthy Values</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#falsy-values">Falsy Values</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shortcutting">Shortcutting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#and-shortcutting">AND Shortcutting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#or-shortcutting">OR Shortcutting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#practical-applications">Practical Applications:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary">Summary:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chaining">Chaining</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#applications">Applications:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#summary_1">Summary:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#boolean-return-values">Boolean Return Values</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_12/">Recursion</a>
                   </li>
@@ -105,7 +141,200 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="boolean-expressions">Boolean Expressions</h1>
+<p>Boolean expressions are expressions that evaluate to either <code>True</code> or <code>False</code>. They are fundamental to decision-making in programming, allowing you to control the flow of your code based on conditions.</p>
+<h2 id="boolean-values">Boolean Values</h2>
+<p>Python has two boolean values: <code>True</code> and <code>False</code>. These values are the result of boolean expressions and are used in conditional statements, loops, and other control structures.</p>
+<pre><code class="language-python">is_raining = True
+is_sunny = False
+</code></pre>
+<h2 id="pythonic-booleans">Pythonic Booleans</h2>
+<p>Python has a concept of "truthy" and "falsy" values, where certain values are implicitly converted to <code>True</code> or <code>False</code> in a boolean context.</p>
+<h3 id="truthy-values">Truthy Values</h3>
+<ul>
+<li>Non-zero numbers</li>
+<li>Non-empty strings</li>
+<li>Non-empty collections (lists, tuples, dictionaries, etc.)</li>
+</ul>
+<h3 id="falsy-values">Falsy Values</h3>
+<ul>
+<li><code>None</code></li>
+<li><code>False</code></li>
+<li>Zero (<code>0</code>, <code>0.0</code>, <code>0j</code>)</li>
+<li>Empty strings (<code>""</code>)</li>
+<li>Empty collections (<code>[]</code>, <code>()</code>, <code>{}</code>)</li>
+</ul>
+<pre><code class="language-python">if 0:
+    print(&quot;This is truthy.&quot;)
+else:
+    print(&quot;This is falsy.&quot;)  # Output: This is falsy.
+
+if &quot;hello&quot;:
+    print(&quot;This is truthy.&quot;)  # Output: This is truthy.
+else:
+    print(&quot;This is falsy.&quot;)
+</code></pre>
+<h2 id="shortcutting">Shortcutting</h2>
+<p>Shortcutting (short-circuit evaluation) is a feature in Python where logical operators <code>and</code> and <code>or</code> stop evaluating as soon as the result is determined. This can make your code more efficient by avoiding unnecessary computations.</p>
+<h3 id="and-shortcutting">AND Shortcutting</h3>
+<p>In an AND operation, if any operand is <code>False</code>, the whole expression is <code>False</code>, and evaluation stops immediately.</p>
+<pre><code class="language-python">a = False
+b = True
+
+result = a and b
+print(result)  # Output: False
+</code></pre>
+<p>Here, <code>a</code> is <code>False</code>, so <code>b</code> is not evaluated because the result is already determined to be <code>False</code>.</p>
+<h3 id="or-shortcutting">OR Shortcutting</h3>
+<p>In an OR operation, if any operand is <code>True</code>, the whole expression is <code>True</code>, and evaluation stops immediately.</p>
+<pre><code class="language-python">a = True
+b = False
+
+result = a or b
+print(result)  # Output: True
+</code></pre>
+<p>Here, <code>a</code> is <code>True</code>, so <code>b</code> is not evaluated because the result is already determined to be <code>True</code>.</p>
+<h2 id="practical-applications">Practical Applications:</h2>
+<p><strong>Avoiding Errors with Shortcutting:</strong></p>
+<p>You can use shortcutting to prevent errors by ensuring that certain conditions are met before performing operations.</p>
+<pre><code class="language-python">user_input = None
+
+# Avoiding attribute error by checking for None
+if user_input and user_input.strip() != &quot;&quot;:
+    print(f&quot;User input: {user_input.strip()}&quot;)
+else:
+    print(&quot;No valid input provided.&quot;)
+</code></pre>
+<p>In this example, <code>user_input.strip()</code> is only called if <code>user_input</code> is not <code>None</code>, preventing a potential <code>AttributeError</code>.</p>
+<p><strong>Conditional Execution:</strong></p>
+<p>Use shortcutting to conditionally execute functions or expressions only when necessary.</p>
+<pre><code class="language-python">def expensive_operation():
+    print(&quot;Expensive operation executed.&quot;)
+    return True
+
+condition = False
+
+# Expensive operation will not execute because condition is False
+result = condition and expensive_operation()
+print(result)  # Output: False
+</code></pre>
+<p>In this example, <code>expensive_operation</code> is not called because <code>condition</code> is <code>False</code>.</p>
+<p><strong>Setting Default Values:</strong></p>
+<p>Use shortcutting with the <code>or</code> operator to provide default values.</p>
+<pre><code class="language-python">primary_value = None
+secondary_value = &quot;Secondary&quot;
+default_value = &quot;Default&quot;
+
+# Uses secondary_value because primary_value is None
+result = primary_value or secondary_value or default_value
+print(result)  # Output: Secondary
+</code></pre>
+<p>Here, <code>secondary_value</code> is used because <code>primary_value</code> is <code>None</code>.</p>
+<p><strong>Input Validation:</strong></p>
+<p>Use shortcutting to validate multiple conditions in user input.</p>
+<pre><code class="language-python">password = &quot;mypassword123&quot;
+
+# Check if password is valid: at least 8 characters, contains a digit, and contains a letter
+is_valid = len(password) &gt;= 8 and any(char.isdigit() for char in password) and any(char.isalpha() for char in password)
+print(f&quot;Password is valid: {is_valid}&quot;)
+</code></pre>
+<p>In this example, the password is considered valid if all conditions are true. If the first condition fails, the subsequent checks are not performed.</p>
+<p><strong>Short-Circuiting with Function Calls:</strong></p>
+<p>Use shortcutting to decide whether to call a function based on certain conditions.</p>
+<pre><code class="language-python">def greet():
+    print(&quot;Hello!&quot;)
+
+name = &quot;Alice&quot;
+
+# Greet only if name is not empty
+name and greet()  # Output: Hello!
+</code></pre>
+<p>In this example, <code>greet()</code> is called only if <code>name</code> is not an empty string.</p>
+<h3 id="summary">Summary:</h3>
+<p>Shortcutting allows you to optimize your code by stopping evaluation as soon as the result is determined. This feature is useful for preventing errors, improving performance, and making your code more concise. By understanding how shortcutting works, you can effectively use it to handle conditional execution, validate inputs, and manage complex logical flows in your programs.</p>
+<h2 id="chaining">Chaining</h2>
+<p>You can chain multiple comparisons together in a single expression.</p>
+<pre><code class="language-python">x = 5
+print(1 &lt; x &lt; 10)  # Output: True
+print(10 &lt; x &lt; 20)  # Output: False
+</code></pre>
+<p>The idea here is that the first value that defines the result in a chained expression is returned:</p>
+<pre><code class="language-python">a or b or c or d
+a and b and c and d
+</code></pre>
+<h3 id="applications">Applications:</h3>
+<p><strong>Finding the First Truthy Value (OR Chaining):</strong></p>
+<p>In an OR chain, the first truthy value is returned, or the last value if none are truthy.</p>
+<pre><code class="language-python">a = None
+b = &quot;&quot;
+c = 0
+d = &quot;Python&quot;
+
+result = a or b or c or d
+print(result)  # Output: Python
+</code></pre>
+<p>In this example, <code>d</code> is the first truthy value, so it is returned.</p>
+<p><strong>Ensuring All Conditions are True (AND Chaining):</strong></p>
+<p>In an AND chain, the first falsy value is returned, or the last value if all are truthy.</p>
+<pre><code class="language-python">a = True
+b = 5 &gt; 3
+c = 10 == 10
+d = 0  # This is falsy
+
+result = a and b and c and d
+print(result)  # Output: 0
+</code></pre>
+<p>In this example, <code>d</code> is the first falsy value, so it is returned.</p>
+<p><strong>Default Values with OR Chaining:</strong></p>
+<p>You can use OR chaining to provide default values if previous values are falsy.</p>
+<pre><code class="language-python">username = input(&quot;Enter your username: &quot;) or &quot;Guest&quot;
+print(f&quot;Welcome, {username}!&quot;)
+</code></pre>
+<p>If the user inputs an empty string, <code>"Guest"</code> is used as the default value.</p>
+<p><strong>Checking Multiple Conditions with AND Chaining:</strong></p>
+<p>You can use AND chaining to ensure multiple conditions are met.</p>
+<pre><code class="language-python">age = 25
+has_permission = True
+is_member = True
+
+if age &gt; 18 and has_permission and is_member:
+    print(&quot;Access granted.&quot;)
+else:
+    print(&quot;Access denied.&quot;)
+</code></pre>
+<p>In this example, access is granted only if all conditions are true.</p>
+<p><strong>Conditional Assignment:</strong></p>
+<p>You can use chaining to assign values based on multiple conditions.</p>
+<pre><code class="language-python">score = 85
+
+grade = 'A' if score &gt;= 90 else 'B' if score &gt;= 80 else 'C' if score &gt;= 70 else 'D' if score &gt;= 60 else 'F'
+print(f&quot;Your grade is: {grade}&quot;)
+</code></pre>
+<p>This example assigns a grade based on the score using chained comparisons.</p>
+<p><strong>Validating User Input:</strong></p>
+<p>Chaining can be used to validate multiple conditions in user input.</p>
+<pre><code class="language-python">password = &quot;mypassword123&quot;
+
+is_valid = len(password) &gt;= 8 and any(char.isdigit() for char in password) and any(char.isalpha() for char in password)
+print(f&quot;Password is valid: {is_valid}&quot;)
+</code></pre>
+<p>In this example, the password is considered valid if it is at least 8 characters long, contains at least one digit, and contains at least one letter.</p>
+<h3 id="summary_1">Summary:</h3>
+<p>Chaining allows you to combine multiple comparisons and logical operations into a single, concise expression. This technique is useful for simplifying code and making it more readable. By understanding how chaining works, you can effectively use it to handle default values, validate conditions, and manage complex logical flows in your programs.</p>
+<h2 id="boolean-return-values">Boolean Return Values</h2>
+<p>Functions can return boolean values, making them useful for complex conditions.</p>
+<p>Imagine we are trying to write down a function that checks if we're allowed to sleep in or not in a certain day, evaluating whether this day is a weekday or not, and if we are on vacation or not.</p>
+<p>We could write down something like this to solve the problem:</p>
+<pre><code class="language-python">def sleep_in(weekday, vacation):
+    if weekday == True and vacation == False:
+        return False
+    else
+        return True
+</code></pre>
+<p>Even though the solution above is correct, it is not a pythonic way of doing things. We could do this instead:</p>
+<pre><code class="language-python">def sleep_in(weekday, vacation):
+    return not (weekday == True and vacation == False)
+</code></pre>
               
             </div>
           </div><footer>

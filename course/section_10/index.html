@@ -65,6 +65,34 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_09/">Lists</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Loops</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#for-loops">for Loops</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#while-loops">while Loops</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_1">Usage:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nested-loops">Nested Loops</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loop-control-statements">Loop Control Statements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#break">break</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#continue">continue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forelse-loop">for/else loop</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-loops-with-lists">Using Loops with Lists</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_11/">Boolean Expressions</a>
                   </li>
@@ -105,7 +133,113 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="loops">Loops</h1>
+<p>Loops allow you to execute a block of code multiple times, making your programs more efficient and reducing the need for repetitive code. In Python, there are two main types of loops: <code>for</code> loops and <code>while</code> loops.</p>
+<h2 id="for-loops"><code>for</code> Loops</h2>
+<p>A <code>for</code> loop is used to iterate over a sequence (such as a list, tuple, string, or range) and execute a block of code for each item in the sequence.</p>
+<p>Here's the syntax of a <code>for</code> loop:</p>
+<pre><code class="language-python">for variable in sequence:
+    # Code to execute for each item
+</code></pre>
+<h3 id="usage">Usage:</h3>
+<p><strong>Iterating Over a List:</strong></p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+   for fruit in fruits:
+       print(fruit)
+</code></pre>
+<p><strong>Using the <code>range()</code> Function:</strong></p>
+<pre><code class="language-python">   for i in range(5):
+       print(i)
+</code></pre>
+<p><strong>Iterating Over a String:</strong></p>
+<pre><code class="language-python">   for letter in &quot;hello&quot;:
+       print(letter)
+</code></pre>
+<h2 id="while-loops"><code>while</code> Loops</h2>
+<p>A <code>while</code> loop continues to execute as long as a specified condition is <code>True</code>. It is useful when the number of iterations is not known beforehand.</p>
+<p>Here's the syntax of a <code>while</code> loop:</p>
+<pre><code class="language-python">while condition:
+    # Code to execute while the condition is True
+</code></pre>
+<h3 id="usage_1">Usage:</h3>
+<p><strong>Basic <code>while</code> Loop:</strong></p>
+<pre><code class="language-python">   count = 0
+
+   while count &lt; 5:
+       print(count)
+       count += 1
+</code></pre>
+<p><strong>Using a <code>while</code> Loop for User Input:</strong></p>
+<pre><code class="language-python">   user_input = &quot;&quot;
+
+   while user_input != &quot;exit&quot;:
+       user_input = input(&quot;Type 'exit' to stop: &quot;)
+</code></pre>
+<h2 id="nested-loops">Nested Loops</h2>
+<p>You can nest loops inside other loops to perform more complex iterations. Each iteration of the outer loop triggers the complete execution of the inner loop.</p>
+<pre><code class="language-python">for i in range(3):
+    for j in range(2):
+        print(f&quot;i = {i}, j = {j}&quot;)
+</code></pre>
+<h2 id="loop-control-statements">Loop Control Statements</h2>
+<p>Python provides several statements to control the execution of loops:</p>
+<h3 id="break"><code>break</code></h3>
+<p>Terminates the loop prematurely.</p>
+<pre><code class="language-python">   for i in range(10):
+       if i == 5:
+           break
+       print(i)
+</code></pre>
+<h3 id="continue"><code>continue</code></h3>
+<p>Skips the current iteration and proceeds to the next iteration.</p>
+<pre><code class="language-python">   for i in range(5):
+       if i == 3:
+           continue
+       print(i)
+</code></pre>
+<h3 id="forelse-loop"><code>for/else</code> loop</h3>
+<p>Executes a block of code after the loop finishes, unless the loop is terminated by a <code>break</code> statement.</p>
+<pre><code class="language-python">for item in container:
+    if search_something(item):
+        # Found it!
+        process(item)
+        break
+else:
+    # Didn't find anything..
+    not_found_in_container()
+</code></pre>
+<h2 id="using-loops-with-lists">Using Loops with Lists</h2>
+<p>Loops are often used to iterate over lists and perform operations on each element.</p>
+<p><strong>Calculating the Sum of a List:</strong></p>
+<pre><code class="language-python">   numbers = [1, 2, 3, 4, 5]
+   total = 0
+
+   for number in numbers:
+       total += number
+
+   print(&quot;Total:&quot;, total)
+</code></pre>
+<p><strong>Finding the Maximum Element in a List:</strong></p>
+<pre><code class="language-python">   numbers = [3, 7, 2, 5, 9]
+   max_number = numbers[0]
+
+   for number in numbers:
+       if number &gt; max_number:
+           max_number = number
+
+   print(&quot;Maximum number:&quot;, max_number)
+</code></pre>
+<p><strong>Using a <code>while</code> Loop to Create a List:</strong></p>
+<pre><code class="language-python">   even_numbers = []
+   num = 2
+
+   while num &lt;= 10:
+       even_numbers.append(num)
+       num += 2
+
+   print(&quot;Even numbers:&quot;, even_numbers)
+</code></pre>
               
             </div>
           </div><footer>

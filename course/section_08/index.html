@@ -61,6 +61,20 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_07/">Functions</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Conditionals</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#if-statements">If Statements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#else-statements">Else Statements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#elif-statements">Elif Statements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nested-if-statements">Nested If Statements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conditional-expressions-ternary-operator">Conditional Expressions (Ternary Operator)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#combining-conditions">Combining Conditions</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_09/">Lists</a>
                   </li>
@@ -105,7 +119,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="conditionals">Conditionals</h1>
+<p>Conditionals allow you to execute different code based on certain conditions. They are fundamental to controlling the flow of your programs, making decisions, and performing actions based on those decisions.</p>
+<h2 id="if-statements">If Statements</h2>
+<p>The <code>if</code> statement is used to test a condition. If the condition is <code>True</code>, the code block inside the <code>if</code> statement is executed.</p>
+<pre><code class="language-python">age = 18
+
+if age &gt;= 18:
+    print(&quot;You are an adult.&quot;)
+</code></pre>
+<h2 id="else-statements">Else Statements</h2>
+<p>The <code>else</code> statement is used in conjunction with the <code>if</code> statement. It defines a block of code that will be executed if the <code>if</code> condition is <code>False</code>.</p>
+<pre><code class="language-python">age = 16
+
+if age &gt;= 18:
+    print(&quot;You are an adult.&quot;)
+else:
+    print(&quot;You are a minor.&quot;)
+</code></pre>
+<h2 id="elif-statements">Elif Statements</h2>
+<p>The <code>elif</code> (short for "else if") statement allows you to check multiple conditions. If the first <code>if</code> condition is <code>False</code>, the program checks the <code>elif</code> conditions in order. If one of the <code>elif</code> conditions is <code>True</code>, its block of code is executed.</p>
+<pre><code class="language-python">score = 85
+
+if score &gt;= 90:
+    print(&quot;Grade: A&quot;)
+elif score &gt;= 80:
+    print(&quot;Grade: B&quot;)
+elif score &gt;= 70:
+    print(&quot;Grade: C&quot;)
+elif score &gt;= 60:
+    print(&quot;Grade: D&quot;)
+else:
+    print(&quot;Grade: F&quot;)
+</code></pre>
+<h2 id="nested-if-statements">Nested If Statements</h2>
+<p>You can nest <code>if</code>, <code>elif</code>, and <code>else</code> statements inside other <code>if</code>, <code>elif</code>, and <code>else</code> statements to create more complex conditions.</p>
+<pre><code class="language-python">num = 15
+
+if num % 2 == 0:
+    print(&quot;The number is even.&quot;)
+else:
+    print(&quot;The number is odd.&quot;)
+    if num % 3 == 0:
+        print(&quot;The number is also divisible by 3.&quot;)
+</code></pre>
+<h2 id="conditional-expressions-ternary-operator">Conditional Expressions (Ternary Operator)</h2>
+<p>A conditional expression, also known as a ternary operator, allows you to write a simple <code>if-else</code> statement in one line.</p>
+<pre><code class="language-python">age = 18
+status = &quot;adult&quot; if age &gt;= 18 else &quot;minor&quot;
+print(status)  # Output: adult
+</code></pre>
+<h2 id="combining-conditions">Combining Conditions</h2>
+<p>You can combine multiple conditions using logical operators <code>and</code>, <code>or</code>, and <code>not</code> to create more complex conditional statements.</p>
+<p><strong>Using <code>and</code>:</strong></p>
+<pre><code class="language-python">   num = 10
+
+   if num &gt; 5 and num &lt; 15:
+       print(&quot;The number is between 5 and 15.&quot;)
+</code></pre>
+<p><strong>Using <code>or</code>:</strong></p>
+<pre><code class="language-python">   day = &quot;Saturday&quot;
+
+   if day == &quot;Saturday&quot; or day == &quot;Sunday&quot;:
+       print(&quot;It's the weekend!&quot;)
+</code></pre>
+<p><strong>Using <code>not</code>:</strong></p>
+<pre><code class="language-python">   is_raining = False
+
+   if not is_raining:
+       print(&quot;It's not raining, you can go outside.&quot;)
+</code></pre>
               
             </div>
           </div><footer>

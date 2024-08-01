@@ -63,6 +63,50 @@
                   <li class="toctree-l1"><a class="reference internal" href="../section_08/">Conditionals</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Lists</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-lists">Creating Lists</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#accessing-list-elements">Accessing List Elements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modifying-lists">Modifying Lists</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#list-operations">List Operations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#length">Length</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#concatenation">Concatenation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repetition">Repetition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slicing">Slicing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checking-membership">Checking Membership</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#list-comprehensions">List Comprehensions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-list-methods">Common List Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#append">append()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#insert">insert()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remove">remove()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pop">pop()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#index">index()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#count">count()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sort">sort()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reverse">reverse()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../section_10/">Loops</a>
                   </li>
@@ -105,7 +149,134 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="lists">Lists</h1>
+<p>Lists are one of the most versatile and commonly used data structures in Python. They allow you to store collections of items in a single variable, making it easy to organize and manipulate data.</p>
+<h2 id="creating-lists">Creating Lists</h2>
+<p>A list is created by placing all the items (elements) inside square brackets <code>[]</code>, separated by commas.</p>
+<pre><code class="language-python"># A list of integers
+numbers = [1, 2, 3, 4, 5]
+
+# A list of strings
+fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+# A mixed list
+mixed = [1, &quot;hello&quot;, 3.14, True]
+</code></pre>
+<h2 id="accessing-list-elements">Accessing List Elements</h2>
+<p>You can access individual elements in a list using their index. Python uses zero-based indexing, meaning the first element has an index of 0.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+print(fruits[2])  # Output: cherry
+
+# Accessing elements from the end
+print(fruits[-1])  # Output: cherry
+print(fruits[-2])  # Output: banana
+</code></pre>
+<h2 id="modifying-lists">Modifying Lists</h2>
+<p>Lists are mutable, meaning you can change their elements after they have been created.</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+# Changing an element
+fruits[1] = &quot;blueberry&quot;
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry']
+
+# Adding elements
+fruits.append(&quot;date&quot;)
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'date']
+
+# Inserting elements
+fruits.insert(1, &quot;banana&quot;)
+print(fruits)  # Output: ['apple', 'banana', 'blueberry', 'cherry', 'date']
+
+# Removing elements
+fruits.remove(&quot;blueberry&quot;)
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'date']
+</code></pre>
+<h2 id="list-operations">List Operations</h2>
+<p>Python provides many built-in methods and operations that you can use to manipulate lists.</p>
+<h3 id="length">Length</h3>
+<pre><code class="language-python">   numbers = [1, 2, 3, 4, 5]
+   print(len(numbers))  # Output: 5
+</code></pre>
+<h3 id="concatenation">Concatenation</h3>
+<pre><code class="language-python">   list1 = [1, 2, 3]
+   list2 = [4, 5, 6]
+   combined = list1 + list2
+   print(combined)  # Output: [1, 2, 3, 4, 5, 6]
+</code></pre>
+<h3 id="repetition">Repetition</h3>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;]
+   print(fruits * 3)  # Output: ['apple', 'banana', 'apple', 'banana', 'apple', 'banana']
+</code></pre>
+<h3 id="slicing">Slicing</h3>
+<pre><code class="language-python">   numbers = [1, 2, 3, 4, 5]
+   print(numbers[1:4])  # Output: [2, 3, 4]
+   print(numbers[:3])   # Output: [1, 2, 3]
+   print(numbers[2:])   # Output: [3, 4, 5]
+</code></pre>
+<h3 id="checking-membership">Checking Membership</h3>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+   print(&quot;banana&quot; in fruits)  # Output: True
+   print(&quot;date&quot; not in fruits)  # Output: True
+</code></pre>
+<h2 id="list-comprehensions">List Comprehensions</h2>
+<p>List comprehensions are perhaps one of the most powerful tools offered by Python. They provide a concise way to create lists. They can be used to generate new lists by applying an expression to each element in an existing list.</p>
+<pre><code class="language-python"># Creating a list of squares
+squares = [x ** 2 for x in range(1, 6)]
+print(squares)  # Output: [1, 4, 9, 16, 25]
+</code></pre>
+<h2 id="common-list-methods">Common List Methods</h2>
+<h3 id="append"><code>append()</code></h3>
+<p>Adds an element to the end of the list.</p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;]
+   fruits.append(&quot;cherry&quot;)
+   print(fruits)  # Output: ['apple', 'banana', 'cherry']
+</code></pre>
+<h3 id="insert"><code>insert()</code></h3>
+<p>Inserts an element at a specified position.</p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;cherry&quot;]
+   fruits.insert(1, &quot;banana&quot;)
+   print(fruits)  # Output: ['apple', 'banana', 'cherry']
+</code></pre>
+<h3 id="remove"><code>remove()</code></h3>
+<p>Removes the first occurrence of a specified element.</p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+   fruits.remove(&quot;banana&quot;)
+   print(fruits)  # Output: ['apple', 'cherry']
+</code></pre>
+<h3 id="pop"><code>pop()</code></h3>
+<p>Removes and returns the element at a specified position (default is the last element).</p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+   fruit = fruits.pop()
+   print(fruit)  # Output: cherry
+   print(fruits)  # Output: ['apple', 'banana']
+</code></pre>
+<h3 id="index"><code>index()</code></h3>
+<p>Returns the index of the first occurrence of a specified element.</p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+   index = fruits.index(&quot;banana&quot;)
+   print(index)  # Output: 1
+</code></pre>
+<h3 id="count"><code>count()</code></h3>
+<p>Returns the number of times a specified element appears in the list.</p>
+<pre><code class="language-python">   fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;banana&quot;]
+   count = fruits.count(&quot;banana&quot;)
+   print(count)  # Output: 2
+</code></pre>
+<h3 id="sort"><code>sort()</code></h3>
+<p>Sorts the list in ascending order.</p>
+<pre><code class="language-python">   numbers = [4, 2, 3, 1, 5]
+   numbers.sort()
+   print(numbers)  # Output: [1, 2, 3, 4, 5]
+</code></pre>
+<h3 id="reverse"><code>reverse()</code></h3>
+<p>Reverses the order of the list.</p>
+<pre><code class="language-python">   numbers = [1, 2, 3, 4, 5]
+   numbers.reverse()
+   print(numbers)  # Output: [5, 4, 3, 2, 1]
+</code></pre>
               
             </div>
           </div><footer>
